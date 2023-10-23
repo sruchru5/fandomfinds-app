@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './Componets/Header';
+import Cards from './Componets/Cards';
+import Maincontent from './Componets/Maincontent';
+import Footer from './Componets/Footer';
 
-function App() {
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import ViratKohli from './Componets/ViratKohli';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    <BrowserRouter>
+    <Header/>
+    <Footer/>
+    <Cards/>
+    <Maincontent/>
+<Routes>
+<Route element={<ViratKohli/>} path="/ViratKholi" />
+        </Routes>
+    </BrowserRouter>
+</>
+  );      
+};
 
 export default App;
